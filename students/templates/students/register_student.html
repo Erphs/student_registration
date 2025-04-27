@@ -1,0 +1,28 @@
+{% extends 'students/base.html' %}
+{% load from_tags %}
+
+
+{% block content %}
+<h1>Register Student</h1>
+<form method="post" class="mt-4">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label for="id_first_name" class="form-label">First Name</label>
+        {{ form.first_name|add_class:"form-control" }}
+    </div>
+
+    <div class="mb-3">
+        <label for="id_last_name" class="form-label">Last Name</label>
+        {{ form.last_name|add_class:"form-control" }}
+    </div>
+
+    <div class="mb-3">
+        <label for="id_email" class="form-label">Email</label>
+        {{ form.email|add_class:"form-control" }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+{% endblock %}
+
